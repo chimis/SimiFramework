@@ -8,7 +8,7 @@ import android.util.AttributeSet;
 import io.simi.utils.Debug;
 
 /**
- * Code: 4.0.3(min-sdk) & 6.0(target-sdk)
+ * Code: 4.0.3(min-sdk) - 6.0(target-sdk)
  * Creator: chimis
  * Created time: 15/12/25 23:44
  * Updated time: 15/12/25 23:44
@@ -22,11 +22,11 @@ public class RecyclerView extends android.support.v7.widget.RecyclerView {
         this(context, null);
     }
 
-    public RecyclerView(Context context, @Nullable AttributeSet attrs) {
+    public RecyclerView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public RecyclerView(Context context, @Nullable AttributeSet attrs, int defStyle) {
+    public RecyclerView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         super.setLayoutManager(new LinearLayoutManager(getContext()));
         super.setOnScrollListener(onScrollDefaultListener);

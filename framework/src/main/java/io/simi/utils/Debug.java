@@ -3,7 +3,7 @@ package io.simi.utils;
 import android.util.Log;
 
 /**
- * Code: 4.0.3(min-sdk) & 6.0(target-sdk)
+ * Code: 4.0.3(min-sdk) - 6.0(target-sdk)
  * Creator: chimis
  * Created time: 16/1/20 21:24
  * Updated time: 16/1/20 21:24

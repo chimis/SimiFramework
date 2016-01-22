@@ -8,7 +8,7 @@ import android.util.SparseArray;
 import io.simi.utils.Debug;
 
 /**
- * Code: 4.0.3(min-sdk) & 6.0(target-sdk)
+ * Code: 4.0.3(min-sdk) - 6.0(target-sdk)
  * Creator: chimis
  * Created time: 16/1/10 11:45
  * Updated time: 16/1/10 11:45

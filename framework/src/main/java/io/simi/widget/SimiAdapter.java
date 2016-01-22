@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import java.util.List;
 
 /**
- * Code: 4.0.3(min-sdk) & 6.0(target-sdk)
+ * Code: 4.0.3(min-sdk) - 6.0(target-sdk)
  * Creator: chimis
  * Created time: 15/12/25 23:26
  * Updated time: 15/12/25 23:26
@@ -40,7 +40,7 @@ public class SimiAdapter<T, V extends ViewDataBinding> extends RecyclerView.Adap
 
     @Override
     public void onBindViewHolder(SimiAdapter<T, V>.ViewHolder holder, final int position) {
-        holder.tag = onBindViewHolder.onBindViewHolder(holder.binding, position, holder.tag);
+        onBindViewHolder.onBindViewHolder(holder.binding, position);
     }
 
     @Override
@@ -58,7 +58,6 @@ public class SimiAdapter<T, V extends ViewDataBinding> extends RecyclerView.Adap
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
 
-        public boolean tag = false;
         public V binding;
 
         public ViewHolder(final View itemView) {

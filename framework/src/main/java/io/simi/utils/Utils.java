@@ -10,7 +10,7 @@ import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * Code: 4.0.3(min-sdk) & 6.0(target-sdk)
+ * Code: 4.0.3(min-sdk) - 6.0(target-sdk)
  * Creator: chimis
  * Created time: 16/1/9 13:29
  * Updated time: 16/1/9 13:29
@@ -29,6 +29,7 @@ public class Utils {
 
     /**
      * 根据手机的分辨率从 dp 的单位 转成为 px(像素)
+     * @return px
      */
     public static int dp2px(float dpValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
@@ -37,6 +38,7 @@ public class Utils {
 
     /**
      * 根据手机的分辨率从 px(像素) 的单位 转成为 dp
+     * @return dp
      */
     public static int px2dp(float pxValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
@@ -92,6 +94,7 @@ public class Utils {
 
     /**
      * MD5加密16位
+     * @return 加密后字符串
      */
     public static String encrypt16MD5(String string) {
         string = encrypt32MD5(string);
@@ -103,6 +106,7 @@ public class Utils {
 
     /**
      * MD5加密32位
+     * @return 加密后字符串
      */
     public static String encrypt32MD5(String string) {
         byte[] hash;

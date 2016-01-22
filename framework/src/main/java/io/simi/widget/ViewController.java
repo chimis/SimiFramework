@@ -17,7 +17,7 @@ import io.simi.R;
 import io.simi.utils.Utils;
 
 /**
- * Code: 4.0.3(min-sdk) & 6.0(target-sdk)
+ * Code: 4.0.3(min-sdk) - 6.0(target-sdk)
  * Creator: chimis
  * Created time: 16/1/10 12:22
  * Updated time: 16/1/10 12:22
