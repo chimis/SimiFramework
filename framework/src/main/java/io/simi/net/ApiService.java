@@ -19,7 +19,8 @@ public class ApiService {
     private static Object api;
     private static String baseUrl;
 
-    private ApiService() {}
+    private ApiService() {
+    }
 
     /**
      * 初始化方法
@@ -37,8 +38,12 @@ public class ApiService {
      * @param factory 数据转换工厂 默认使用Gson
      */
     public static void initialize(String host, Converter.Factory factory) {
-        if (TextUtils.isEmpty(host) || (factory == null && host.equals(baseUrl))) {
-            Debug.w("The host is null!");
+        if (TextUtils.isEmpty(host)) {
+            Debug.w("ApiServiceException: HOST NULL");
+            return;
+        }
+        if (factory == null && host.equals(baseUrl)) {
+            Debug.w("ApiServiceException: IS EXIST");
             return;
         }
         if (factory == null) {
