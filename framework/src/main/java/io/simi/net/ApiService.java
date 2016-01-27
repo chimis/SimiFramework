@@ -3,9 +3,9 @@ package io.simi.net;
 import android.text.TextUtils;
 
 import io.simi.utils.Debug;
-import retrofit.Converter;
-import retrofit.GsonConverterFactory;
-import retrofit.Retrofit;
+import retrofit2.Converter;
+import retrofit2.GsonConverterFactory;
+import retrofit2.Retrofit;
 
 /**
  * Code: 4.0.3(min-sdk) - 6.0(target-sdk)

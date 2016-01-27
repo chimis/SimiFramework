@@ -1,14 +1,13 @@
 package io.simi.net;
 
-import retrofit.Callback;
-import retrofit.Response;
-import retrofit.Retrofit;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public abstract class ApiCallback<T> implements Callback<T> {
 
     @Override
-    public void onResponse(Response<T> response, Retrofit retrofit) {
-        onSuccess(response, retrofit);
+    public void onResponse(Response<T> response) {
+        onSuccess(response);
         onCompleted();
     }
 
@@ -18,7 +17,7 @@ public abstract class ApiCallback<T> implements Callback<T> {
         onCompleted();
     }
 
-    public abstract void onSuccess(Response<T> response, Retrofit retrofit);
+    public abstract void onSuccess(Response<T> response);
 
     public abstract void onFailed(Throwable t);
 
