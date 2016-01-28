@@ -4,6 +4,7 @@ import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -37,6 +38,15 @@ public abstract class SimiFragment<T extends ViewDataBinding> extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         onCreateView(savedInstanceState);
+    }
+
+    /**
+     * 展示消息
+     * @param message 消息体
+     * @param type 时间
+     */
+    protected void showMessage(String message, int type) {
+        Snackbar.make(binding.getRoot(), message, type).show();
     }
 
     public T getBinding() {

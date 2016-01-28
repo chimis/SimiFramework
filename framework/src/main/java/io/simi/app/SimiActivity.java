@@ -3,6 +3,7 @@ package io.simi.app;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -55,5 +56,13 @@ public abstract class SimiActivity<T extends ViewDataBinding> extends AppCompatA
      */
     protected void onCreateViewBefore() {}
 
+    /**
+     * 展示消息
+     * @param message 消息体
+     * @param type 时间
+     */
+    protected void showMessage(String message, int type) {
+        Snackbar.make(binding.getRoot(), message, type).show();
+    }
 
 }

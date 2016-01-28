@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
-version = "0.0.4"
+version = "0.0.5"
 
 android {
     compileSdkVersion 23
@@ -34,9 +34,9 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
+    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta3'
     // Retrofit网络访问
     compile 'com.android.support:recyclerview-v7:23.1.1'
-    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta3'
     compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta3'
     // 图片缓存
     compile 'com.facebook.fresco:fresco:0.8.1'
