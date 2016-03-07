@@ -7,6 +7,9 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+
+import io.simi.utils.Utils;
 
 /**
  * Code: 4.0.3(min-sdk) - 6.0(target-sdk)
@@ -54,15 +57,57 @@ public abstract class SimiActivity<T extends ViewDataBinding> extends AppCompatA
     /**
      *
      */
-    protected void onCreateViewBefore() {}
+    protected void onCreateViewBefore() {
+    }
+
+
+    protected void showMessage(String message) {
+        showMessage(message, Snackbar.LENGTH_SHORT);
+    }
+
+    protected void showErrorMessage(String message) {
+        showMessage(message, -1, 0xFFF3456D);
+    }
+
+    protected void showSuccessMessage(String message) {
+        showMessage(message, -1, 0xFF00B58A);
+    }
+
+    protected void showNormalMessage(String message) {
+        showMessage(message, -1, 0xFF009EFC);
+    }
+
+    protected void showLongMessage(String message) {
+        showMessage(message, Snackbar.LENGTH_LONG);
+    }
 
     /**
      * 展示消息
+     *
      * @param message 消息体
-     * @param type 时间
+     * @param type    时间
      */
-    protected void showMessage(String message, int type) {
-        Snackbar.make(binding.getRoot(), message, type).show();
+    public void showMessage(String message, int type) {
+        showMessage(message, type, -1);
+    }
+
+    /**
+     * 展示消息
+     *
+     * @param message 消息体
+     * @param type    时间
+     * @param color   颜色
+     */
+    public void showMessage(String message, int type, int color) {
+        Snackbar snackbar = Snackbar.make(binding.getRoot(), message, type == -1 ? Snackbar.LENGTH_SHORT : type);
+        Snackbar.SnackbarLayout view = (Snackbar.SnackbarLayout) snackbar.getView();
+        ViewGroup.LayoutParams params = view.getLayoutParams();
+        params.height = Utils.dp2px(54);
+        view.setLayoutParams(params);
+        if (color != -1) {
+            view.setBackgroundColor(color);
+        }
+        snackbar.show();
     }
 
 }
