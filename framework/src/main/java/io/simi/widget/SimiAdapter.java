@@ -16,17 +16,17 @@ import java.util.List;
  * Created time: 15/12/25 23:26
  * Updated time: 15/12/25 23:26
  */
-public class SimiAdapter<T, V extends ViewDataBinding> extends RecyclerView.Adapter<SimiAdapter<T, V>.ViewHolder> {
+public class SimiAdapter<V extends ViewDataBinding> extends RecyclerView.Adapter<SimiAdapter<V>.ViewHolder> {
 
     private Context context;
-    private List<T> models;
+    private List<?> models;
     private int layoutResId;
     private OnBindViewHolder<V> onBindViewHolder;
 
     private OnItemClickListener onItemClickListener;
     private OnItemLongClickListener onItemLongClickListener;
 
-    public SimiAdapter(Context context, int layoutResId, List<T> models, OnBindViewHolder<V> onBindViewHolder) {
+    public SimiAdapter(Context context, int layoutResId, List<?> models, OnBindViewHolder<V> onBindViewHolder) {
         this.context = context;
         this.layoutResId = layoutResId;
         this.models = models;
@@ -39,7 +39,7 @@ public class SimiAdapter<T, V extends ViewDataBinding> extends RecyclerView.Adap
     }
 
     @Override
-    public void onBindViewHolder(SimiAdapter<T, V>.ViewHolder holder, final int position) {
+    public void onBindViewHolder(SimiAdapter<V>.ViewHolder holder, final int position) {
         onBindViewHolder.onBindViewHolder(holder.binding, position);
     }
 
