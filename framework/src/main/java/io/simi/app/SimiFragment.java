@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import io.simi.utils.Utils;
+
 /**
  * Code: 4.0.3(min-sdk) - 6.0(target-sdk)
  * Creator: chimis
@@ -40,13 +42,53 @@ public abstract class SimiFragment<T extends ViewDataBinding> extends Fragment {
         onCreateView(savedInstanceState);
     }
 
+    protected void showMessage(String message) {
+        showMessage(message, Snackbar.LENGTH_SHORT);
+    }
+
+    protected void showErrorMessage(String message) {
+        showMessage(message, -1, 0xFFF3456D);
+    }
+
+    protected void showSuccessMessage(String message) {
+        showMessage(message, -1, 0xFF00B58A);
+    }
+
+    protected void showNormalMessage(String message) {
+        showMessage(message, -1, 0xFF009EFC);
+    }
+
+    protected void showLongMessage(String message) {
+        showMessage(message, Snackbar.LENGTH_LONG);
+    }
+
     /**
      * 展示消息
+     *
      * @param message 消息体
-     * @param type 时间
+     * @param type    时间
      */
-    protected void showMessage(String message, int type) {
-        Snackbar.make(binding.getRoot(), message, type).show();
+    public void showMessage(String message, int type) {
+        showMessage(message, type, -1);
+    }
+
+    /**
+     * 展示消息
+     *
+     * @param message 消息体
+     * @param type    时间
+     * @param color   颜色
+     */
+    public void showMessage(String message, int type, int color) {
+        Snackbar snackbar = Snackbar.make(binding.getRoot(), message, type == -1 ? Snackbar.LENGTH_SHORT : type);
+        Snackbar.SnackbarLayout view = (Snackbar.SnackbarLayout) snackbar.getView();
+        ViewGroup.LayoutParams params = view.getLayoutParams();
+        params.height = Utils.dp2px(54);
+        view.setLayoutParams(params);
+        if (color != -1) {
+            view.setBackgroundColor(color);
+        }
+        snackbar.show();
     }
 
     public T getBinding() {
