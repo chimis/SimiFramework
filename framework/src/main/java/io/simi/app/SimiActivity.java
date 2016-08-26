@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import io.simi.utils.Message;
 import io.simi.utils.Utils;
 
 /**
@@ -99,15 +100,7 @@ public abstract class SimiActivity<T extends ViewDataBinding> extends AppCompatA
      * @param color   颜色
      */
     public void showMessage(String message, int type, int color) {
-        Snackbar snackbar = Snackbar.make(binding.getRoot(), message, type == -1 ? Snackbar.LENGTH_SHORT : type);
-        Snackbar.SnackbarLayout view = (Snackbar.SnackbarLayout) snackbar.getView();
-        ViewGroup.LayoutParams params = view.getLayoutParams();
-        params.height = Utils.dp2px(54);
-        view.setLayoutParams(params);
-        if (color != -1) {
-            view.setBackgroundColor(color);
-        }
-        snackbar.show();
+        Message.show(binding.getRoot(), message, type, color);
     }
 
 }

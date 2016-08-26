@@ -29,6 +29,7 @@ public class Utils {
 
     /**
      * 根据手机的分辨率从 dp 的单位 转成为 px(像素)
+     * @param dpValue 像素点
      * @return px
      */
     public static int dp2px(float dpValue) {
@@ -38,6 +39,7 @@ public class Utils {
 
     /**
      * 根据手机的分辨率从 px(像素) 的单位 转成为 dp
+     * @param pxValue 像素值
      * @return dp
      */
     public static int px2dp(float pxValue) {
@@ -94,6 +96,7 @@ public class Utils {
 
     /**
      * MD5加密16位
+     * @param string 待加密字符串
      * @return 加密后字符串
      */
     public static String encrypt16MD5(String string) {
@@ -106,6 +109,7 @@ public class Utils {
 
     /**
      * MD5加密32位
+     * @param string 待加密字符串
      * @return 加密后字符串
      */
     public static String encrypt32MD5(String string) {

@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import io.simi.utils.Message;
 import io.simi.utils.Utils;
 
 /**
@@ -80,15 +81,7 @@ public abstract class SimiFragment<T extends ViewDataBinding> extends Fragment {
      * @param color   颜色
      */
     public void showMessage(String message, int type, int color) {
-        Snackbar snackbar = Snackbar.make(binding.getRoot(), message, type == -1 ? Snackbar.LENGTH_SHORT : type);
-        Snackbar.SnackbarLayout view = (Snackbar.SnackbarLayout) snackbar.getView();
-        ViewGroup.LayoutParams params = view.getLayoutParams();
-        params.height = Utils.dp2px(54);
-        view.setLayoutParams(params);
-        if (color != -1) {
-            view.setBackgroundColor(color);
-        }
-        snackbar.show();
+        Message.show(binding.getRoot(), message, type, color);
     }
 
     public T getBinding() {
