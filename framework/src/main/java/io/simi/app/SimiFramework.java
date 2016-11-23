@@ -2,8 +2,6 @@ package io.simi.app;
 
 import android.content.Context;
 
-import com.facebook.drawee.backends.pipeline.Fresco;
-
 import io.simi.utils.Utils;
 
 /**
@@ -26,7 +24,6 @@ public class SimiFramework {
             instance = new SimiFramework(context);
         }
         Utils.initialize(instance.context);
-        Fresco.initialize(instance.context);
     }
 
 }
