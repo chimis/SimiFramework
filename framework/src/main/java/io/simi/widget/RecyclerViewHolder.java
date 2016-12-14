@@ -31,14 +31,14 @@ public class RecyclerViewHolder<V extends ViewDataBinding> extends android.suppo
 
     @Override
     public void onClick(View view) {
-        if (onItemClickListener != null) {
+        if (onItemClickListener != null && getAdapterPosition() >= 0) {
             onItemClickListener.onItemClick(binding, getAdapterPosition());
         }
     }
 
     @Override
     public boolean onLongClick(View view) {
-        if (onItemLongClickListener != null) {
+        if (onItemLongClickListener != null && getAdapterPosition() >= 0) {
             onItemLongClickListener.onItemLongClick(binding, getAdapterPosition());
             return true;
         }
