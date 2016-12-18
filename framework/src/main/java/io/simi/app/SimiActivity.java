@@ -28,6 +28,7 @@ public abstract class SimiActivity<T extends ViewDataBinding> extends AppCompatA
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        onCreateBefore();
         super.onCreate(savedInstanceState);
         SimiFramework.initialize(this);
         onCreateViewBefore();
@@ -53,6 +54,12 @@ public abstract class SimiActivity<T extends ViewDataBinding> extends AppCompatA
      * #必须实现# 子类以此方法替代onCreate(Bundle savedInstanceState)
      */
     protected abstract void onCreateView(Bundle savedInstanceState);
+
+    /**
+     *
+     */
+    protected void onCreateBefore() {
+    }
 
 
     /**
